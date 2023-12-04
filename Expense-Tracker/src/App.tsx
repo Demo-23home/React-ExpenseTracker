@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import ExpenseList from "./components/ExpenseList";
 import { ExpenseFilter } from "./components/ExpenseFilter";
 import ExpenseForm from "./components/ExpenseForm";
+import categories from "./components/categories";
 
-
-export const categories = ["Groceries","Utilties","Entertainment"]
 
 
 
