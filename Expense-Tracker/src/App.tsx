@@ -4,9 +4,6 @@ import { ExpenseFilter } from "./components/ExpenseFilter";
 import ExpenseForm from "./components/ExpenseForm";
 import categories from "./components/categories";
 
-
-
-
 export const App = () => {
   const [expenses, setExpenses] = useState([
     { id: 1, description: "aaa", amount: 3, category: "Groceries" },
@@ -19,12 +16,12 @@ export const App = () => {
 
   const visibleExpenses = selectedCategory
     ? expenses.filter((e) => e.category === selectedCategory)
-    : expenses; 
+    : expenses;
 
   return (
     <div>
       <div className="mb-5">
-        <ExpenseForm/>
+        <ExpenseForm onSubmit={expense => setExpenses([ ...expenses, { ...expense,  id:expenses.length + 1}])} />
       </div>
       <div className="mb-3">
         <ExpenseFilter
